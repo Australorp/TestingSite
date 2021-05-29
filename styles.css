@@ -133,9 +133,14 @@ footer div h3 {
 }
 
 @media (max-width: 800px) {
+
+    #flexNav {
+        flex-flow: column;
+    }
+
     #aboutSection {
         flex-flow: column;
-        
+        margin-top: 20em;
     }
 
     #aboutSection img {
