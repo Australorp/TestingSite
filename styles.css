@@ -71,7 +71,8 @@ header {
     margin: 1em;
     box-shadow: 0 4px 8px rgba(1, 1, 1, .5);
     text-decoration: none;
-    border: 2px solid whitesmoke
+    border: 2px solid whitesmoke;
+    transition: .5s;
 }
 
 #flexNav a:hover {
@@ -79,6 +80,7 @@ header {
     background-color: whitesmoke;
     box-shadow: 4px 8px 12px rgba(1, 1, 1, .75);
     cursor: pointer;
+    transition: .5s;
 }
 
 #aboutSection {
@@ -129,7 +131,18 @@ footer {
 footer div h3 {
     color:  rgba(255, 255, 255, .75);
     border-bottom: 2px solid rgba(255, 255, 255, .75);
-    display:inline-block; 
+    display: inline-block; 
+}
+
+footer div h3 a {
+    color: red;
+    text-decoration: none;
+    transition: .5s;
+}
+
+footer div h3 a:hover {
+    color: whitesmoke;
+    transition: .5s;
 }
 
 @media (max-width: 800px) {
