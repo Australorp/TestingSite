@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+    <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>All About Jupiter</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
-  </head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@700&display=swap');
+    </style> 
+    </head>
 
-  <header>
-      <div id="flexNav">
-        <h1 id="title">All About Jupiter</h1>
+    <header>
+        <div id="flexNav">
+            <h1 id="title">All About Planets</h1>
 
-        <div id="buttonBox">
-            <a href="" class="button">Empty Button</a>
-            <a href="" class="button">Empty Button</a>
-        </div>
-
-        <a href="#jupiterSection">
-            <div class="parent">
-                <div class="colorfulShadow jupiterLogo"></div>
+            <div id="buttonBox">
+                <a href="#jupiterSection" class="button">Jupiter</a>
+                <a href="#earthSection" class="button">Earth</a>
+                <button class="button theme-toggle">Toggle Theme</button>
             </div>
-        </a>
-      </div>
-  </header>
+        </div>
+    </header>
 
-    <body>
+    <body class="dark-theme || light-theme">
+
+        <script src="script.js"></script>
+
         <div class="contentSection" id="jupiterSection">
             <div class="contentPicDiv">
-                <img src="images/jupiterlarge.jpg" alt="Jupiter Closeup" />
+                <img src="images/jupiter.jpg" alt="Jupiter Closeup" />
             </div>
             <div class="contentInfo right">
                 <ul>
@@ -58,7 +58,9 @@
 
   <footer>
     <div>
-        <h3>Testing Webpage served from <a href="https://github.com/Australorp/TestingSite">Github Repo</a></h3>
+        <h3>Testing Webpage served from <a href="https://github.com/Australorp/TestingSite" >Github Repo</a></h3>
+
+        <a class="button" href="#">Back to Top</a>
     </div>
   </footer>
 </html>
