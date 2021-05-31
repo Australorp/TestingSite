@@ -1,13 +1,10 @@
 html {
     scroll-behavior: smooth;
-    font-family: 'Alegreya Sans SC', sans-serif;
 }
 
 body {
     margin: 0;
-}
-
-body.light-theme {
+    font-family: 'Alegreya Sans SC', sans-serif;
     background-color: whitesmoke;
 }
 
@@ -24,9 +21,6 @@ header {
 #title {
     font-size: 3em;
     font-family: 'Alegreya Sans SC', sans-serif;
-}
-
-body.light-theme #title {
     color: black;
     text-shadow: none;
 }
@@ -47,18 +41,36 @@ body.dark-theme #title {
     display: flex;
 }
 
+#flexNav a {
+    font-size: 1.5em;
+}
+
+#themeIconDiv {
+    display: flex;
+    align-items: flex-start;
+    margin: 1em;
+}
+
+i {
+    cursor: pointer;
+    color: black;
+    transition: color .5s;
+}
+
+body.dark-theme i {
+    color: whitesmoke;
+    transition: color .5s;
+}
+
 .button {
     border-radius: 16px;
-    padding: 2em;
     margin: 1em;
+    padding: 1em;
     box-shadow: 0 4px 8px rgba(1, 1, 1, .5);
     text-decoration: none;
     transition: .5s;
-    font-size: 1em;
+    text-align: center;
     font-family: 'Alegreya Sans SC', sans-serif;
-}
-
-body.light-theme .button {
     color: black;
     background-color: whitesmoke;
     border: 2px solid black;
@@ -86,7 +98,6 @@ body.dark-theme .button:hover {
     color: black;
     background-color: whitesmoke;
     box-shadow: 4px 8px 12px rgba(1, 1, 1, .75);
-    
 }
 
 
@@ -98,7 +109,7 @@ body.dark-theme .button:hover {
 }
 
 body.light-theme .contentSection {
-    background-color: dodgerblue;
+    background-color: none;
 }
 
 body.dark-theme .contentSection {
@@ -115,32 +126,50 @@ body.dark-theme .contentSection {
 }
 
 .contentPicDiv img {
-    border: 2px solid #F5F5F5;
+    border: none;
     width: 100%;
     height: auto;
     margin: auto 1em;
-    box-shadow: 0 4px 8px 8px rgba(1, 1, 1, .5);
+    box-shadow: 0 4px 8px 4px rgba(1, 1, 1, .5);
     border-radius: 16px;
 }
 
-.contentInfo.right {
+body.dark-theme .contentPicDiv img {
+    border: 2px solid white;
+}
+
+.contentInfo {
     background-color: whitesmoke;
-    box-shadow: -8px 0 8px rgba(1, 1, 1, .5);
-    border-radius: 16px 0 0 16px;
+    box-shadow: 0 4px 8px rgba(1, 1, 1, .5);
     width: 50vw;
     display: flex;
     align-items: center;
     overflow: auto;
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+.contentInfo.right {
+    border-radius: 16px 0 0 16px;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
 }
 
 .contentInfo.left {
-    background-color: whitesmoke;
-    box-shadow: 8px 0 8px rgba(1, 1, 1, .5);
     border-radius: 0 16px 16px 0;
-    width: 50vw;
-    display: flex;
-    align-items: center;
-    overflow: auto;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+body.dark-theme .contentInfo.right {
+    box-shadow: -8px 0 8px rgba(1, 1, 1, .5);
+    border: none;
+}
+
+body.dark-theme .contentInfo.left {
+    box-shadow: 8px 0 8px rgba(1, 1, 1, .5);
+    border: none;
 }
 
 .contentInfo ul {
@@ -158,6 +187,7 @@ footer div h3 {
     color:  rgba(255, 255, 255, .75);
     border-bottom: 2px solid rgba(255, 255, 255, .75);
     display: inline-block; 
+    font-family: 'Alegreya Sans SC', sans-serif;
 }
 
 body.light-theme footer h3 {
