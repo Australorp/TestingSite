@@ -127,7 +127,6 @@ body.dark-theme .contentSection {
 
 .contentPicDiv img {
     border: none;
-    width: 100%;
     height: auto;
     margin: auto 1em;
     box-shadow: 0 4px 8px 4px rgba(1, 1, 1, .5);
