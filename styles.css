@@ -1,16 +1,21 @@
 html {
     scroll-behavior: smooth;
+    display: flex;
 }
 
 body {
     margin: 0;
     font-family: 'Alegreya Sans SC', sans-serif;
     background-color: whitesmoke;
+    -webkit-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
 }
 
 body.dark-theme {
     background-color: black;
     background-image: url("images/spaceBack1.jpg");
+    -webkit-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
 }
 
 header {
@@ -31,14 +36,10 @@ body.dark-theme #title {
 }
 
 #flexNav {
-    margin-left: 2em;
+    margin: 0 2em;
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-#flexNav #buttonBox {
-    display: flex;
 }
 
 #flexNav a {
@@ -64,8 +65,8 @@ body.dark-theme i {
 
 .button {
     border-radius: 16px;
-    margin: 1em;
-    padding: 1em;
+    margin: .5em;
+    padding: .5em;
     box-shadow: 0 4px 8px rgba(1, 1, 1, .5);
     text-decoration: none;
     transition: .5s;
@@ -145,6 +146,7 @@ body.dark-theme .contentPicDiv img {
     align-items: center;
     overflow: auto;
     font-family: 'Alegreya Sans SC', sans-serif;
+    transition: box-shadow .5s;
 }
 
 .contentInfo.right {
@@ -164,11 +166,13 @@ body.dark-theme .contentPicDiv img {
 body.dark-theme .contentInfo.right {
     box-shadow: -8px 0 8px rgba(1, 1, 1, .5);
     border: none;
+    transition: box-shadow 1s;
 }
 
 body.dark-theme .contentInfo.left {
     box-shadow: 8px 0 8px rgba(1, 1, 1, .5);
     border: none;
+    transition: box-shadow 1s;
 }
 
 .contentInfo ul {
@@ -217,13 +221,18 @@ body.dark-theme footer h3 a:hover {
 
 @media (max-width: 800px) {
 
+    header {
+        margin-bottom: 25vw;
+    }
+
     #flexNav {
-        flex-flow: column;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: flex-start;
     }
 
     .contentSection {
         flex-flow: column;
-        margin-top: 20em;
     }
 
     .contentSection img {
@@ -238,7 +247,38 @@ body.dark-theme footer h3 a:hover {
         order: 2;
         margin: 2em auto;
         border-radius: 16px;
-        box-shadow: 0 8px 8px rgba(1, 1, 1, .5);
+    }
+
+    .contentSection .contentInfo.right {
+        border: 2px solid black;
+    }
+    
+    .contentSection .contentInfo.left {
+        border: 2px solid black;
+    }
+    
+}
+
+@media (max-width: 415px) {
+
+    header {
+        margin-bottom: 100vw;
+    }
+    
+}
+
+@media (max-width: 390px) {
+
+    header {
+        margin-bottom: 125vw;
+    }
+    
+}
+
+@media (max-width: 325px) {
+
+    header {
+        margin-bottom: 150vw;
     }
     
 }
