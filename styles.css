@@ -48,19 +48,57 @@ body.dark-theme #title {
 
 #themeIconDiv {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     margin: 1em;
+    justify-content: center;
+}
+
+.dot {
+    height: 1px;
+    width: 1px;
+    background-color: whitesmoke;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    transition: .5s ease-in-out;
+}
+
+i:hover ~ .dot {
+    background-color: black;
+    transition: .5s ease-in-out;
+    height: 75px;
+    width: 75px;
+    opacity: 100;
+}
+
+body.dark-theme .dot {
+    background-color: black;
+}
+
+body.dark-theme i:hover ~ .dot {
+    background-color: whitesmoke;
 }
 
 i {
     cursor: pointer;
     color: black;
-    transition: color .5s;
+    transition: color .5s ease-out;
+}
+
+i:hover {
+    color: whitesmoke;
+    transition: color .5s ease-out;
 }
 
 body.dark-theme i {
     color: whitesmoke;
-    transition: color .5s;
+    transition: color .5s ease-out;
+}
+
+body.dark-theme i:hover {
+    color: black;
+    transition: color .5s ease-out;
 }
 
 .button {
