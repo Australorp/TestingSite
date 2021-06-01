@@ -61,12 +61,12 @@ body.dark-theme #title {
     position: absolute;
     z-index: -1;
     opacity: 0;
-    transition: .5s ease-in-out;
+    transition: .3s ease-in-out;
 }
 
 i:hover ~ .dot {
     background-color: black;
-    transition: .5s ease-in-out;
+    transition: .3s ease-in-out;
     height: 75px;
     width: 75px;
     opacity: 100;
@@ -122,15 +122,12 @@ body.dark-theme .button {
 }
 
 .button:hover {
-    cursor: pointer;
-    transition: .5s;
-}
-
-body.light-theme .button:hover {
     color: whitesmoke;
     background-color: black;
     box-shadow: none;
-    border: 2px solid whitesmoke;
+    border: 2px solid black;
+    cursor: pointer;
+    transition: .5s;
 }
 
 body.dark-theme .button:hover {
@@ -242,18 +239,13 @@ body.dark-theme footer h3 {
 }
 
 footer div h3 a {
-    color: red;
+    color: blue;
     text-decoration: none;
     transition: .5s;
 }
 
-body.light-theme footer h3 a:hover {
-    color: black;
-    transition: .5s;
-}
-
-body.dark-theme footer h3 a:hover {
-    color: whitesmoke;
+footer h3 a:hover {
+    color: dodgerblue;
     transition: .5s;
 }
 
