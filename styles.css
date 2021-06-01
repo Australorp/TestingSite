@@ -28,11 +28,13 @@ header {
     font-family: 'Alegreya Sans SC', sans-serif;
     color: black;
     text-shadow: none;
+    transition: .5s ease-in-out;
 }
 
 body.dark-theme #title {
     color: #fff;
     text-shadow: 2px 2px 4px pink;
+    transition: .5s ease-in-out;
 }
 
 #flexNav {
@@ -146,10 +148,12 @@ body.dark-theme .button:hover {
 
 body.light-theme .contentSection {
     background-color: none;
+    transition: .5s ease-in-out;
 }
 
 body.dark-theme .contentSection {
     background-color: rgba(255, 255, 255, .25);
+    transition: .5s ease-in-out;
 }
 
 
@@ -167,10 +171,12 @@ body.dark-theme .contentSection {
     margin: auto 1em;
     box-shadow: 0 4px 8px 4px rgba(1, 1, 1, .5);
     border-radius: 16px;
+    transition: box-shadow .5s ease-in-out;
 }
 
 body.dark-theme .contentPicDiv img {
     border: 2px solid white;
+    transition: box-shadow .5s ease-in-out;
 }
 
 .contentInfo {
