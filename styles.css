@@ -283,6 +283,7 @@ footer h3 a:hover {
         order: 2;
         margin: 2em auto;
         border-radius: 16px;
+        width: 80vw;
     }
 
     .contentSection .contentInfo.right {
@@ -295,7 +296,15 @@ footer h3 a:hover {
     
 }
 
-@media (max-width: 415px) {
+@media (max-width: 545px) {
+
+    header {
+        margin-bottom: 50vw;
+    }
+    
+}
+
+@media (max-width: 410px) {
 
     header {
         margin-bottom: 100vw;
@@ -304,14 +313,6 @@ footer h3 a:hover {
 }
 
 @media (max-width: 390px) {
-
-    header {
-        margin-bottom: 125vw;
-    }
-    
-}
-
-@media (max-width: 325px) {
 
     header {
         margin-bottom: 150vw;
