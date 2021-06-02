@@ -66,20 +66,8 @@ body.dark-theme #title {
     transition: .3s ease-in-out;
 }
 
-i:hover ~ .dot {
-    background-color: black;
-    transition: .3s ease-in-out;
-    height: 75px;
-    width: 75px;
-    opacity: 100;
-}
-
 body.dark-theme .dot {
     background-color: black;
-}
-
-body.dark-theme i:hover ~ .dot {
-    background-color: whitesmoke;
 }
 
 i {
@@ -88,18 +76,8 @@ i {
     transition: color .5s ease-out;
 }
 
-i:hover {
-    color: whitesmoke;
-    transition: color .5s ease-out;
-}
-
 body.dark-theme i {
     color: whitesmoke;
-    transition: color .5s ease-out;
-}
-
-body.dark-theme i:hover {
-    color: black;
     transition: color .5s ease-out;
 }
 
@@ -121,21 +99,6 @@ body.dark-theme .button {
     color: whitesmoke;
     background-color: black;
     border: 2px solid whitesmoke;
-}
-
-.button:hover {
-    color: whitesmoke;
-    background-color: black;
-    box-shadow: none;
-    border: 2px solid black;
-    cursor: pointer;
-    transition: .5s;
-}
-
-body.dark-theme .button:hover {
-    color: black;
-    background-color: whitesmoke;
-    box-shadow: 4px 8px 12px rgba(1, 1, 1, .75);
 }
 
 
@@ -298,6 +261,47 @@ footer h3 a:hover {
 
     body.dark-theme .contentSection .contentInfo.left {
         box-shadow: 0 4px 8px rgba(1, 1, 1, .5);
+    }
+    
+}
+
+@media (hover: hover) {
+
+    i:hover {
+        color: whitesmoke;
+        transition: color .5s ease-out;
+    }
+
+    body.dark-theme i:hover {
+        color: black;
+        transition: color .5s ease-out;
+    }
+
+    i:hover ~ .dot {
+        background-color: black;
+        transition: .3s ease-in-out;
+        height: 75px;
+        width: 75px;
+        opacity: 100;
+    }
+
+    body.dark-theme i:hover ~ .dot {
+        background-color: whitesmoke;
+    }
+
+    .button:hover {
+        color: whitesmoke;
+        background-color: black;
+        box-shadow: none;
+        border: 2px solid black;
+        cursor: pointer;
+        transition: .5s;
+    }
+    
+    body.dark-theme .button:hover {
+        color: black;
+        background-color: whitesmoke;
+        box-shadow: 4px 8px 12px rgba(1, 1, 1, .75);
     }
     
 }
