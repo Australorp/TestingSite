@@ -21,9 +21,11 @@ body.dark-theme {
 header {
     height: 20vh;
     min-height: 120px;
+    transition: .5s;
 }
 
 #title {
+    line-height: 1;
     font-size: 3em;
     font-family: 'Alegreya Sans SC', sans-serif;
     color: rgb(0, 0, 0);
@@ -40,7 +42,8 @@ body.dark-theme #title {
     margin: 0 2em;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: left;
 }
 
 #flexNav a {
@@ -131,6 +134,7 @@ body.dark-theme .contentSection {
     border: none;
     height: auto;
     margin: auto 1em;
+    width: 40vw;
     box-shadow: 0 4px 8px 4px rgba(1, 1, 1, .5);
     border-radius: 16px;
     transition: box-shadow .5s ease-in-out;
@@ -204,6 +208,10 @@ body.dark-theme footer h3 {
     border-bottom: 2px solid rgba(255, 255, 255, .75);
 }
 
+footer {
+    background-color: rgba(255, 255, 255, .25);
+}
+
 footer div h3 a {
     color: blue;
     text-decoration: none;
@@ -214,6 +222,19 @@ footer h3 a:hover {
     color: dodgerblue;
     transition: .5s;
 }
+
+@media (min-width: 1200px) {
+    .contentInfo {
+        font-size: 1.25em;
+    }
+}
+
+@media (min-width: 1400px) {
+    .contentInfo {
+        font-size: 1.5em;
+    }
+}
+
 
 @media (max-width: 800px) {
 
@@ -233,6 +254,7 @@ footer h3 a:hover {
 
     .contentSection img {
         margin-top: 2em;
+        width: 60vw;
     }
 
     .contentSection .contentPicDiv {
@@ -325,6 +347,22 @@ footer h3 a:hover {
 
     header {
         margin-bottom: 150vw;
+    }
+    
+}
+
+@media (max-width: 300px) {
+
+    #flexNav a {
+        font-size: 1em;
+    }
+    
+}
+
+@media (max-width: 230px) {
+
+    #flexNav a {
+        font-size: .75em;
     }
     
 }
