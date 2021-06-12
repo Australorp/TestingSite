@@ -318,21 +318,18 @@ footer h3 a:hover {
         font-size: calc(4vw + 1em);
     }
 
-    #flexNav {
-        padding-left: 20vw;
-    }
-
     #buttonContainer {
         position: fixed;
-        top: 0;
+        top: 50%;
         left: 0;
+        transform: translateY(-50%);
         flex-direction: column;
-        box-shadow: 1px 1px 0 1px black;
-        border-radius: 0 0 12px 0;
+        box-shadow: 0 0 0 2px black;
+        border-radius: 0 12px 12px 0;
     }
 
     body.dark-theme #buttonContainer {
-        box-shadow: 1px 1px 0 1px var(--DarkAccent);
+        box-shadow: 0 0 0 2px var(--DarkAccent);
     }
     
 
@@ -341,7 +338,7 @@ footer h3 a:hover {
     }
 
     .button:first-child {
-        border-radius: 0;
+        border-radius: 0 10px 0 0;
     }
     
     .button:last-child {
