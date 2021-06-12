@@ -1,3 +1,9 @@
+:root {
+    --PrimaryDark: black;
+    --SecondaryDark: rgb(80, 61, 80);
+    --DarkAccent: whitesmoke;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -12,35 +18,34 @@ body {
 }
 
 body.dark-theme {
-    background-color: black;
+    background-color: var(--PrimaryDark);
     background-image: url("images/spaceBack1.jpg");
     -webkit-transition: color 1s ease-in-out;
     transition: color 1s ease-in-out;
 }
 
 header {
-    height: 30vmin;
-    min-height: 120px;
+    height: 30vh;
+    min-height: 200px;
     transition: .5s;
     background-color: whitesmoke;
 }
 
 body.dark-theme header {
-    background-color: black;
+    background-color: var(--PrimaryDark);
 }
 
 
 
 #title {
     line-height: 1;
-    font-size: 2.8vw;
     font-family: 'Alegreya Sans SC', sans-serif;
     color: rgb(0, 0, 0);
     transition: .5s ease-in-out;
 }
 
 body.dark-theme #title {
-    color: #fff;
+    color: var(--DarkAccent);
     text-shadow: 2px 2px 4px pink;
     transition: .5s ease-in-out;
 }
@@ -72,11 +77,11 @@ body.dark-theme #title {
 }
 
 body.dark-theme .dot {
-    background-color: black;
+    background-color: var(--PrimaryDark);
 }
 
 #themeIconDiv i {
-    font-size: 4vw;
+    font-size: 3em;
     cursor: pointer;
     color: black;
     transition: color .5s ease-out;
@@ -84,35 +89,42 @@ body.dark-theme .dot {
 }
 
 body.dark-theme #themeIconDiv i {
-    color: whitesmoke;
+    color: var(--DarkAccent);
     transition: color .5s ease-out;
 }
 
 #buttonContainer {
     display: flex;
-    border-radius: 8px;
+    border-radius: 12px;
+    box-shadow: 0 4px 0 black;
+}
+
+body.dark-theme #buttonContainer {
+    box-shadow: 0 4px 0 var(--DarkAccent);
 }
 
 .button {
-    padding: 1vw;
-    font-size: 2.4vw;
+    padding: 2vw;
     transition: .5s;
     text-align: center;
     font-family: 'Alegreya Sans SC', sans-serif;
     color: black;
     background-color: whitesmoke;
+    text-decoration: none;
+    transition: box-shadow 0s;
+    transition: background-color .5s;
 }
 
 .button:first-child {
-    border-radius: 1vw 0 0 1vw;
+    border-radius: 12px 0 0 12px;
 }
 
 .button:last-child {
-    border-radius: 0 1vw 1vw 0;
+    border-radius: 0 12px 12px 0;
 }
 
 body.dark-theme .button {
-    color: whitesmoke;
+    color: var(--DarkAccent);
     background-color: black;
 }
 
@@ -122,7 +134,6 @@ body.dark-theme .button {
     margin: 10em 0 0 0;
     display: flex;
     justify-content: space-between;
-    font-size: 1.25vw;
     transition: background-color .5s ease-in-out;
 }
 
@@ -155,7 +166,7 @@ body.dark-theme .contentSection {
 }
 
 body.dark-theme .contentPicDiv img {
-    border: 2px solid white;
+    border: 2px solid var(--DarkAccent);
     transition: box-shadow .5s ease-in-out;
 }
 
@@ -170,18 +181,37 @@ body.dark-theme .contentPicDiv img {
     transition: box-shadow .5s;
 }
 
+body.dark-theme .contentInfo {
+    background-color: var(--PrimaryDark);
+    color: var(--DarkAccent)
+}
+
 .contentInfo.right {
-    border-radius: 2vw 0 0 2vw;
+    border-radius: 1em 0 0 1em;
     border-top: 2px solid black;
     border-left: 2px solid black;
     border-bottom: 2px solid black;
 }
 
 .contentInfo.left {
-    border-radius: 0 2vw 2vw 0;
+    border-radius: 0 1em 1em 0;
     border-top: 2px solid black;
     border-right: 2px solid black;
     border-bottom: 2px solid black;
+}
+
+body.dark-theme .contentInfo.right {
+    border-radius: 1em 0 0 1em;
+    border-top: 2px solid var(--DarkAccent);
+    border-left: 2px solid var(--DarkAccent);
+    border-bottom: 2px solid var(--DarkAccent);
+}
+
+body.dark-theme .contentInfo.left {
+    border-radius: 0 1em 1em 0;
+    border-top: 2px solid var(--DarkAccent);
+    border-right: 2px solid var(--DarkAccent);
+    border-bottom: 2px solid var(--DarkAccent);
 }
 
 body.dark-theme .contentInfo.right {
@@ -208,7 +238,6 @@ footer {
 footer div h3 {
     color:  rgba(255, 255, 255, .75);
     border-bottom: 2px solid rgba(255, 255, 255, .75);
-    font-size: 2vw;
     display: inline-block; 
     font-family: 'Alegreya Sans SC', sans-serif;
 }
@@ -239,7 +268,7 @@ footer h3 a:hover {
     transition: .5s;
 }
 
-@media (hover: hover) {
+@media (any-hover) {
 
     #themeIconDiv i:hover {
         color: whitesmoke;
@@ -247,34 +276,105 @@ footer h3 a:hover {
     }
 
     body.dark-theme #themeIconDiv i:hover { 
-        color: black;
+        color: var(--PrimaryDark);
         transition: color .5s ease-out;
     }
 
     i:hover ~ .dot {
         background-color: black;
         transition: .3s ease-in-out;
-        height: 6vw;
-        width: 6vw; 
+        height: 75px;
+        width: 75px; 
         opacity: 100;
     }
 
     body.dark-theme #themeIconDiv i:hover ~ .dot {
-        background-color: whitesmoke;
+        background-color: var(--DarkAccent);
     }
 
     .button:hover {
         color: whitesmoke;
         background-color: black;
-        box-shadow: none;
+        box-shadow: 0 6px 0 whitesmoke;
         cursor: pointer;
         transition: .5s;
+        transition: box-shadow 0s;
     }
     
     body.dark-theme .button:hover {
         color: black;
-        background-color: whitesmoke;
-        box-shadow: 4px 8px 12px rgba(1, 1, 1, .75);
+        background-color: var(--DarkAccent);
+        box-shadow: 0 6px 0 black;
+    }
+}
+
+@media screen and (max-width: 630px) {
+
+    header {
+        min-height: 20vh;
+    }
+
+    #title {
+        font-size: calc(4vw + 1em);
+    }
+
+    #flexNav {
+        padding-left: 20vw;
+    }
+
+    #buttonContainer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        flex-direction: column;
+        box-shadow: 1px 1px 0 1px black;
+        border-radius: 0 0 12px 0;
+    }
+
+    body.dark-theme #buttonContainer {
+        box-shadow: 1px 1px 0 1px var(--DarkAccent);
     }
     
+
+    .button {
+        padding: 1.5vw;
+    }
+
+    .button:first-child {
+        border-radius: 0;
+    }
+    
+    .button:last-child {
+        border-radius: 0 0 10px 0;
+    }
+
+    .button:hover {
+        box-shadow: none;
+    }
+    
+    body.dark-theme .button:hover {
+        box-shadow: none;
+    }
+
+    .contentSection {
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .contentPicDiv {
+        order: 1;
+    }
+
+    .contentInfo.left, .contentInfo.right {
+        width: 50vw;
+        order: 2;
+        border: 2px solid black;
+        border-radius: 1em;
+    }
+
+    body.dark-theme .contentInfo.right,  body.dark-theme .contentInfo.left {
+        border: 2px solid var(--DarkAccent);
+        border-radius: 1em;
+    }
 }
