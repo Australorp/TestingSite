@@ -1,7 +1,11 @@
 :root {
     --PrimaryDark: black;
-    --SecondaryDark: rgb(80, 61, 80);
-    --DarkAccent: whitesmoke;
+    --SecondaryDark: black;
+    --DarkAccent: rgb(255, 143, 51);
+
+    --PrimaryLight: whitesmoke;
+    --SecondaryLight:wheat;
+    --LightAccent: rgb(4, 39, 68);
 }
 
 html {
@@ -11,10 +15,16 @@ html {
 body {
     margin: 0;
     font-family: 'Alegreya Sans SC', sans-serif;
-    background-color: #d5e3e2;
+    background-color: var(--SecondaryLight);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23f5f5f5' fill-opacity='1' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     -webkit-transition: color 1s ease-in-out;
     transition: color 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+body > * {
+    margin-top: 10vh;
 }
 
 body.dark-theme {
@@ -24,52 +34,52 @@ body.dark-theme {
     transition: color 1s ease-in-out;
 }
 
-header {
-    height: 30vh;
+html header {
     min-height: 200px;
     transition: .5s;
-    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1em;
 }
-
-body.dark-theme header {
-    background-color: var(--PrimaryDark);
-}
-
-
 
 #title {
     line-height: 1;
     font-family: 'Alegreya Sans SC', sans-serif;
-    color: rgb(0, 0, 0);
+    color: var(--LightAccent);
     transition: .5s ease-in-out;
+    transition: border 0s;
+    background-color: var(--PrimaryLight);
+    padding: .25em;
+    border-radius: 8px;
+    box-shadow: 0 0 26px 24px var(--PrimaryLight),
+                0 0 30px 12px var(--PrimaryLight),
+                0 0 44px 6px var(--SecondaryLight),
+                0 0 58px 4px var(--PrimaryLight),
+                0 0 62px var(--SecondaryLight),
+                0 0 76px var(--SecondaryLight);
 }
 
 body.dark-theme #title {
     color: var(--DarkAccent);
-    text-shadow: 2px 2px 4px pink;
-    transition: .5s ease-in-out;
-}
-
-#flexNav {
-    margin: 0 2em;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    height: 100%;
+    border: none;
+    background-color: transparent;
+    padding: none;
+    box-shadow: none;
 }
 
 #themeIconDiv {
     display: flex;
     align-items: center;
-    margin: 1em;
+    margin: 2em;
     justify-content: center;
 }
 
 .dot {
     height: 1px;
     width: 1px;
-    background-color: whitesmoke;
+    background-color: var(--PrimaryLight);
     border-radius: 50%;
     position: absolute;
     opacity: 0;
@@ -83,7 +93,7 @@ body.dark-theme .dot {
 #themeIconDiv i {
     font-size: 3em;
     cursor: pointer;
-    color: black;
+    color: var(--LightAccent);
     transition: color .5s ease-out;
     z-index: 1;
 }
@@ -93,14 +103,43 @@ body.dark-theme #themeIconDiv i {
     transition: color .5s ease-out;
 }
 
+#themeIconDiv i:hover {
+    color: var(--PrimaryLight);
+    transition: color .5s ease-out;
+}
+
+body.dark-theme #themeIconDiv i:hover { 
+    color: var(--PrimaryDark);
+    transition: color .5s ease-out;
+}
+
+i:hover ~ .dot {
+    background-color: var(--LightAccent);
+    transition: .3s ease-in-out;
+    height: 75px;
+    width: 75px; 
+    opacity: 100;
+}
+
+body.dark-theme #themeIconDiv i:hover ~ .dot {
+    background-color: var(--DarkAccent);
+}
+
+html nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #buttonContainer {
     display: flex;
     border-radius: 12px;
-    box-shadow: 0 4px 0 black;
+    box-shadow: 0 0 0 2px var(--LightAccent),
+                0 4px 8px rgba(0, 0, 0, .5);
 }
 
 body.dark-theme #buttonContainer {
-    box-shadow: 0 4px 0 var(--DarkAccent);
+    box-shadow: 0 0 0 2px var(--DarkAccent);
 }
 
 .button {
@@ -108,33 +147,45 @@ body.dark-theme #buttonContainer {
     transition: .5s;
     text-align: center;
     font-family: 'Alegreya Sans SC', sans-serif;
-    color: black;
-    background-color: whitesmoke;
+    color: var(--LightAccent);
+    background-color: var(--PrimaryLight);
     text-decoration: none;
-    transition: box-shadow 0s;
-    transition: background-color .5s;
+    transition: color .5s;
 }
 
 .button:first-child {
-    border-radius: 12px 0 0 12px;
+    border-radius: 11px 0 0 11px;
 }
 
 .button:last-child {
-    border-radius: 0 12px 12px 0;
+    border-radius: 0 11px 11px 0;
 }
 
 body.dark-theme .button {
     color: var(--DarkAccent);
-    background-color: black;
+    background-color: var(--SecondaryDark);
 }
 
+.button:hover {
+    color: var(--PrimaryLight);
+    background-color: var(--LightAccent);
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 0 0 24px var(--LightAccent);
+}
 
+body.dark-theme .button:hover {
+    color: var(--PrimaryDark);
+    background-color: var(--DarkAccent);
+    box-shadow: 0 0 24px var(--DarkAccent);
+}
 
 .contentSection {
-    margin: 10em 0 0 0;
+    padding: 1em;
     display: flex;
     justify-content: space-between;
     transition: background-color .5s ease-in-out;
+    margin-top: 20vh;
 }
 
 body.light-theme .contentSection {
@@ -158,9 +209,8 @@ body.dark-theme .contentSection {
 .contentPicDiv img {
     border: none;
     height: auto;
-    margin: auto 1em;
     width: 40vw;
-    box-shadow: 0 4px 8px 4px rgba(1, 1, 1, .5);
+    box-shadow: 0 4px 8px rgba(1, 1, 1, .5);
     border-radius: 16px;
     transition: box-shadow .5s ease-in-out;
 }
@@ -171,7 +221,8 @@ body.dark-theme .contentPicDiv img {
 }
 
 .contentInfo {
-    background-color: whitesmoke;
+    background-color: var(--PrimaryLight);
+    color: var(--LightAccent);
     box-shadow: 0 4px 8px rgba(1, 1, 1, .5);
     width: 50vw;
     display: flex;
@@ -179,49 +230,14 @@ body.dark-theme .contentPicDiv img {
     overflow: auto;
     font-family: 'Alegreya Sans SC', sans-serif;
     transition: box-shadow .5s;
+    border: 2px solid var(--LightAccent);
+    border-radius: 16px;
 }
 
 body.dark-theme .contentInfo {
     background-color: var(--PrimaryDark);
-    color: var(--DarkAccent)
-}
-
-.contentInfo.right {
-    border-radius: 1em 0 0 1em;
-    border-top: 2px solid black;
-    border-left: 2px solid black;
-    border-bottom: 2px solid black;
-}
-
-.contentInfo.left {
-    border-radius: 0 1em 1em 0;
-    border-top: 2px solid black;
-    border-right: 2px solid black;
-    border-bottom: 2px solid black;
-}
-
-body.dark-theme .contentInfo.right {
-    border-radius: 1em 0 0 1em;
-    border-top: 2px solid var(--DarkAccent);
-    border-left: 2px solid var(--DarkAccent);
-    border-bottom: 2px solid var(--DarkAccent);
-}
-
-body.dark-theme .contentInfo.left {
-    border-radius: 0 1em 1em 0;
-    border-top: 2px solid var(--DarkAccent);
-    border-right: 2px solid var(--DarkAccent);
-    border-bottom: 2px solid var(--DarkAccent);
-}
-
-body.dark-theme .contentInfo.right {
-    box-shadow: -8px 0 8px rgba(1, 1, 1, .5);
-    transition: box-shadow 1s;
-}
-
-body.dark-theme .contentInfo.left {
-    box-shadow: 8px 0 8px rgba(1, 1, 1, .5);
-    transition: box-shadow 1s;
+    color: var(--DarkAccent);
+    border: 2px solid var(--DarkAccent);
 }
 
 .contentInfo ul {
@@ -231,30 +247,27 @@ body.dark-theme .contentInfo.left {
 }
 
 footer {
-    margin-top: 20vmin;
     text-align: center;
 }
 
 footer div h3 {
-    color:  rgba(255, 255, 255, .75);
-    border-bottom: 2px solid rgba(255, 255, 255, .75);
+    color:  var(--LightAccent);
+    border-bottom: 2px solid var(--LightAccent);
     display: inline-block; 
     font-family: 'Alegreya Sans SC', sans-serif;
 }
 
-body.light-theme footer h3 {
-    color:  black;
-    border-bottom: 2px solid black;
-}
-
 body.dark-theme footer h3 {
-    color:  rgba(255, 255, 255, .75);
-    border-bottom: 2px solid rgba(255, 255, 255, .75);
+    color: var(--DarkAccent);
+    border-bottom: 2px solid var(--DarkAccent);
 }
 
 footer {
-    background-color: rgba(255, 255, 255, .25);
-    
+    background-color:var(--PrimaryLight);
+}
+
+body.dark-theme footer {
+    background-color:var(--PrimaryDark);
 }
 
 footer div h3 a {
@@ -264,51 +277,14 @@ footer div h3 a {
 }
 
 footer h3 a:hover {
-    color: dodgerblue;
-    transition: .5s;
-}
-
-@media (any-hover) {
-
-    #themeIconDiv i:hover {
-        color: whitesmoke;
-        transition: color .5s ease-out;
-    }
-
-    body.dark-theme #themeIconDiv i:hover { 
-        color: var(--PrimaryDark);
-        transition: color .5s ease-out;
-    }
-
-    i:hover ~ .dot {
-        background-color: black;
-        transition: .3s ease-in-out;
-        height: 75px;
-        width: 75px; 
-        opacity: 100;
-    }
-
-    body.dark-theme #themeIconDiv i:hover ~ .dot {
-        background-color: var(--DarkAccent);
-    }
-
-    .button:hover {
-        color: whitesmoke;
-        background-color: black;
-        box-shadow: 0 6px 0 whitesmoke;
-        cursor: pointer;
-        transition: .5s;
-        transition: box-shadow 0s;
-    }
-    
-    body.dark-theme .button:hover {
-        color: black;
-        background-color: var(--DarkAccent);
-        box-shadow: 0 6px 0 black;
-    }
+    color: red;
 }
 
 @media screen and (max-width: 630px) {
+
+    body {
+        display: block;
+    }
 
     header {
         min-height: 20vh;
@@ -324,12 +300,18 @@ footer h3 a:hover {
         left: 0;
         transform: translateY(-50%);
         flex-direction: column;
-        box-shadow: 0 0 0 2px black;
-        border-radius: 0 12px 12px 0;
+        box-shadow: 0 0 0 2px var(--LightAccent);
+        border-radius: 0 6px 6px 0;
+        background-color: var(--LightAccent);
+    }
+
+    .button + .button {
+        margin-top: 2px;
     }
 
     body.dark-theme #buttonContainer {
         box-shadow: 0 0 0 2px var(--DarkAccent);
+        background-color: var(--DarkAccent);
     }
     
 
@@ -338,11 +320,11 @@ footer h3 a:hover {
     }
 
     .button:first-child {
-        border-radius: 0 10px 0 0;
+        border-radius: 0 6px 0 0;
     }
     
     .button:last-child {
-        border-radius: 0 0 10px 0;
+        border-radius: 0 0 6px 0;
     }
 
     .button:hover {
@@ -356,18 +338,18 @@ footer h3 a:hover {
     .contentSection {
         flex-direction: column;
         align-items: center;
-        gap: 1em;
     }
 
     .contentPicDiv {
         order: 1;
     }
 
-    .contentInfo.left, .contentInfo.right {
+    .contentInfo {
         width: 50vw;
         order: 2;
         border: 2px solid black;
         border-radius: 1em;
+        margin-top: 1em;
     }
 
     body.dark-theme .contentInfo.right,  body.dark-theme .contentInfo.left {
