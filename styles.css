@@ -279,6 +279,10 @@ footer h3 a:hover {
         min-height: 20vh;
     }
 
+    nav {
+        margin: 0;
+    }
+
     #title {
         font-size: calc(4vw + 1em);
     }
