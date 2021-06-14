@@ -327,14 +327,6 @@ footer h3 a:hover {
         border-radius: 0 0 6px 0;
     }
 
-    .button:hover {
-        box-shadow: none;
-    }
-    
-    body.dark-theme .button:hover {
-        box-shadow: none;
-    }
-
     .contentSection {
         flex-direction: column;
         align-items: center;
